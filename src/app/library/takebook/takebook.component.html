@@ -1,0 +1,34 @@
+<div class="tableclass">
+    <form [formGroup]="formData">
+  <table class="table table-borderless">
+    <tr>
+      <td><label> Rool No </label><td><input type='text' formControlName='rollno' (input)="changevalue($event.target.value)"><br/><div class="picker"></div></td>
+      </tr>
+    <tr>
+      <td><label> Name </label><td><input type='text' formControlName='name'></td>
+      </tr>
+    <tr>
+        <td>
+            <label>Class</label><td><select formControlName='class' formControlName='class'>
+                <option value="">select.....</option>
+                <option  value='I'>I</option>
+                <option  value='II'>II</option>
+                <option  value='III'>III</option>
+                <option  value='IV'>IV</option>
+                <option  value='V'>V</option>
+                <option  value='VI'>VI</option>
+                <option  value='VII'>VII</option>
+                <option  value='VIII'>VIII</option>
+                <option  value='IX'>IX</option>
+                <option  value='X'>X</option>
+              </select>
+            </td>
+      </tr>
+      <tr>
+        <td colspan='2' align="center">
+            <button (click)="getbooks()">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  </div>

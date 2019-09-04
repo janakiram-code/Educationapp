@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 50px;
+    background-color: antiquewhite
+}
+.padding-right{
+    margin-right: 20px;
+}
+.input.ng-touched{
+    background-color: lightgoldenrodyellow
+}
+.tableclass{
+    width: 50%;
+}

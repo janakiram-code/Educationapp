@@ -1,0 +1,20 @@
+<!-- <p >Observable Basics</p>
+<hr/>
+<b>Observable Data </b>
+ <div *ngFor="let f of fruits"> {{ f | uppercase }}</div>
+ <hr>
+<div >
+  <b>Error Status :</b>
+ {{anyErrors? 'error occured ' : 'It All Good'}}
+  <hr>
+</div>
+<div> <b> completion status : </b> {{ finished ? 'Observer completed ': '' }}</div>
+<hr>
+<button (click)="Start()">Start Emitting</button>
+ -->
+<div>
+   <b>Id : {{student.id}}</b><br/>
+  <input [value]="student.fname" (input)="student.fname.$event.target.value"><br/>
+  <input [value]="student.lname" (input)="student.lname.$event.target.value"><br/> 
+  <button (click)="update()">Update</button>
+  </div>

@@ -1,0 +1,37 @@
+<div class="right">
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="form-group">
+  <label for="stdname">Student Name</label>
+  <input type="text" id="stdname" class="form-control" formControlName="stdname" autocomplete="false"><br>
+  </div>
+  <div class="form-group">
+  <label for="stdclass">Student Class</label>
+  <input type="text" id="stdclass" class="form-control" formControlName="stdclass"><br>
+    </div>
+    <div class="form-group">
+  <label for="bookno">Book No</label>
+  <input type="text" id="bookno" class="form-control" formControlName="bookno"><br>
+  </div>
+  <div class="form-group">
+  <label for="bookname">Book Name</label>
+  <input type="text" id="bookname" class="form-control" formControlName="bookname"><br>
+  </div>
+  <div class="form-group">
+  <label for="issuedate">Issue Date</label>
+  <input type="text" id="issuedate" class="form-control" formControlName="issuedate"><br>
+  </div>
+  <div class="form-group">
+  <label for="returndate" >Return Date</label>
+  <input type="text" id="returndate" class="form-control" formControlName="returndate"><br>
+  </div>
+  <div class="form-group">
+  <label for="totdays">Total Days</label>
+  <input type="text" id="totdays" class="form-control" formControlName="totdays"><br>
+  </div>
+  <input type="submit">
+  </div>
+  </form>
+  BankName {{BankName}}
+  Account Id {{accid}}
+</div>

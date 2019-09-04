@@ -1,0 +1,7 @@
+.picker{
+    width: 100px;
+    border: 1px;
+    height: auto;
+    z-index: 4000;
+    overflow: override; 
+}

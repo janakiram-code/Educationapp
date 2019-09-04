@@ -1,0 +1,33 @@
+<div class='display-List'>
+    <div class='pagenat'>
+        <span><img src="assets/backward1.png" style="width:20px;height:20px" (click)=getPrevious(pages)></span><input type="text" [(ngModel)]='pages' style="width: 25px;height:20px">/{{totrec}}<span *ngIf="pages<=totrec"><img src="assets/forward.png" style="width:20px;height:20px" (click)=getNext(pages)></span>
+      </div>
+      
+<table border='1'>
+  <tr><th colspan='3' style='text-align: right;'><font (click)="temp='register'">Add New</font></th></tr>
+  <tr><th>Reg No</th><th>Student Name</th><th>Class</th></tr>
+  <tr *ngFor="let ar of stddata |paginate: {itemsPerPage: 5,currentPage: page1} ; let i=index "> <td>{{ar.stdregno}}</td><td>{{ar.stdname}}</td><td>{{ar.stdclass}}</td></tr>
+</table>
+</div>
+
+<div class="display-fitter" *ngIf="temp=='register'">
+  <form #frm="ngForm">
+<table class="borderless">
+  <tr><td>
+    <label>Student Regno</label></td><td>:</td><td><input type="text" [(ngModel)]="stdregno" readonly name='stdregno'></td></tr><br/>
+  <tr><td>
+    <label>Student Name</label></td><td>:</td><td><input type="text" [(ngModel)]="stdname" name='stdname'></td></tr><br/>
+  <tr><td>
+    <label>Student Class</label></td><td>:</td><td><input type="text" [(ngModel)]="stdclass" name='stdclass'></td></tr><br/>
+  <tr><td>
+    <label>Father Name</label></td><td>:</td><td><input type="text" [(ngModel)]="stdfaname" name='stdfaname'></td></tr><br/>
+  <tr><td>
+    <label>Student Address</label></td><td>:</td><td><input type="text" [(ngModel)]="stdaddr" name='stdaddr'></td></tr><br/>
+  <tr><td>
+    </td><td></td><td><input type="button" (click)="regstudent()" Value="Register" class="btn btn-primary"></td></tr>
+    </table>
+    <button (click)="sendmail()" class="btn btn-primary">Send mail</button>
+    </form>
+    <!--{{frm.value | json}}-->
+  </div>
+  

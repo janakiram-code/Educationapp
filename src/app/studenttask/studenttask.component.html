@@ -1,0 +1,42 @@
+
+ <button (click)="getFields()" class="btn btn-primary">getFields</button> 
+
+<!--<div *ngIf='a==true'> 
+  <table>
+      <div [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <tr *ngFor="let flds of fields;index as i">
+      <td>{{flds.caption}}</td>
+      <td *ngIf="flds.type=='Text Box'"><input type='text' formControlName='{{flds.fieldname}}'>{{flds.fieldname}}</td>
+      <td *ngIf="flds.type=='Combo'">{{flds.fieldname}}   
+        <select formControlName='{{flds.fieldname}}'>
+          <option *ngFor="let flds1 of flds.txt1">{{flds1}}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr><td class='btn-primary' (click)="test()">Insert</td></tr>
+    </div>
+  </table>
+</div>-->
+<!-- <form [formGroup]="formData">
+<div class="fields">
+  <input type="text"  placeholder="first name" formControlName="firstName" required [ngClass]="{'cls':formData.get('firstName').errors && (formData.get('firstName').touched)}">
+</div>
+<div class="fields">
+  <input type="text"  placeholder="last name" formControlName="lastName" required >
+</div>
+<button (click)="Addaddress()">Add Address</button>
+<div id="addressblock" formArrayName="address">
+<div *ngFor="let item of addressListArray.controls; let i=index" [formGroupName]="i">
+  <input type="text" placeholder="city" formControlName="city" required >
+  <input type="text" placeholder="state" formControlName="state" required>
+  <input type="text" placeholder="country" formControlName="country" required>
+  <span (click)="RemoveAdd(i)">X</span>
+</div>
+</div>
+<button (click)="saveformData()">Save Form Data</button>
+<button (click)="onloadData()">Save Form Data</button>
+</form> -->
+<!-- <app-studentperformance (on-updateStudent)="saveData($event)" [student]="studentObj"></app-studentperformance>
+<p> {{studentObj.fname + ' ' + studentObj.lname}}</p>
+<p>{{fullName}}</p> -->

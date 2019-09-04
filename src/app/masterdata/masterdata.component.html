@@ -1,0 +1,58 @@
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<form [formGroup]="formData" (ngSubmit)="onFormSubmit()">
+  <table class="borderless">
+    <tr>
+      <td>
+        <label align='center' appCustdirective hoverColor="orange">Look Type</label></td><td>:</td><td><select>
+            <option *ngFor="let val of looktypes" [value]="val.lookcode">{{val.lookcode}}</option>
+            </select><img src="assets/create.png" style="width:20px;height:20px" (click)="CreateLookup();temp='show'">
+        </td>
+      </tr><br/>
+    <tr>
+      <td>
+        <label appCustdirective hoverColor="orange">Look Code</label></td><td>:</td><td><input type="text" formControlName='lookcode'>
+        </td>
+      </tr><br/>
+    <tr>
+      <td>
+        <label>Look Name</label></td><td>:</td><td><input type="text" formControlName='lookname'>
+        </td>
+      </tr><br/>
+    <tr>
+      <td>
+        <label>Look Type</label></td><td>:</td><td><input type="text" formControlName='looktype'>
+        <br/></td></tr></table>
+      <button type="submit" class="btn btn-primary" (click)="Insertlookup()">Inser</button>
+</form>
+    <div class="popup" id="popup1" *ngIf="temp=='show'"><img src="assets/close.jpg" style="width:20px;height:20px;align:cnter;" (click)="temp=''">
+      <form [formGroup]="formData1">
+          <table class="borderless">
+              <tr>
+                  <td>
+                    <label>Look Code</label></td><td>:</td><td><input type="text" formControlName='lookcode' (blur)="Copyval();searchBook($event)" required>
+                    </td><div
+                    *ngIf="formData1.get('lookcode').errors &&
+                    formData1.get('lookcode').dirty &&
+                    formData1.get('lookcode').errors.validLookup">
+                      Oops, only urls served over https and only from the .io top-level domain are accepted.
+                      Talk about restrictions!
+                    </div>
+                  </tr><br/>
+              <tr>
+                  <td>
+                    <label>Look Name</label></td><td>:</td><td><input type="text" formControlName='lookname' id="lookname">
+                    </td>
+                  </tr><br/>
+              <tr>
+                  <td>
+                    <label>Look Type</label></td><td>:</td><td><input type="text" formControlName='looktype' readonly>
+                    </td>
+                  </tr><br/>
+                <br/>
+                  <button type="submit" class="btn btn-primary" (click)="InsertlookType();temp=''">Inser</button>
+                  </table>
+      </form>
+    </div>

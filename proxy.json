@@ -1,0 +1,11 @@
+{
+    "/file2ref/*":{
+        "target":"http://localhost:1000"
+    },
+    "/file3ref/*":{
+        "target":"http://localhost:1000"
+    },
+    "/file1refvar/*":{
+        "target":"http://localhost:1000"
+    }
+} 

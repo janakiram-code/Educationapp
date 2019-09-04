@@ -1,0 +1,15 @@
+.display-List{
+    margin-left: 20px;
+    float:left;
+    width:200px;
+    
+}
+.display-fitter{
+    float:left;
+    width:fit-content;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+.pagenat{
+    margin-left: 75px;
+}

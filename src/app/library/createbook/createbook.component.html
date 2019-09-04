@@ -1,0 +1,101 @@
+<div class="tableclass" id="datatable">
+    <table class="table table-bordered">
+      <tr>
+        <th colspan="5" ><img src="assets/create.png" style="width:20px;height:20px;float:right" (click)="openform=true;appendCss();"></th>
+      </tr>
+    <tr>
+      <th>
+        Book No
+      </th>
+      <th>
+        Book Name
+      </th>
+      <th>
+        Class
+      </th>
+      <th>
+        Book Author
+      </th>
+      <th>
+        Book Quantity
+      </th>
+      </tr>
+      <tr *ngFor="let data of booksdata?booksdata:[]">
+        <td>
+            {{data.bookid}}
+        </td>
+        <td>
+            {{data.bookname}}
+        </td>
+        <td>
+            {{data.class}}
+        </td>
+        <td>
+            {{data.author}}
+        </td>
+        <td>
+            {{data.noofbooks}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="alert alert-success .custclass" *ngIf="showmsg">
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+<div [hidden]="!openform" class="sidediv" id="formdiv" style="margin-right:[globalwidth]">
+<form [formGroup]="formData" (ngSubmit)="onFormSubmit()">
+    <table class="borderless">
+        <!-- <tr>
+          <td>
+            <label>Book Id</label></td><td>:</td><td><input type="readonly" formControlName='bookid'>
+            </td>
+          </tr><br/> -->
+      <tr>
+        <td>
+        <label>Book Name</label></td><td>:</td><td><input type="text" formControlName='bookname'>
+        </td>
+      </tr><br/>
+      <tr>
+        <td>
+        <label>Class</label></td><td>:</td><td><select formControlName='class'>
+            <option value="">select.....</option>
+            <option  value='I'>I</option>
+            <option  value='II'>II</option>
+            <option  value='III'>III</option>
+            <option  value='IV'>IV</option>
+            <option  value='V'>V</option>
+            <option  value='VI'>VI</option>
+            <option  value='VII'>VII</option>
+            <option  value='VIII'>VIII</option>
+            <option  value='IX'>IX</option>
+            <option  value='X'>X</option>
+          </select>
+        </td>
+      </tr><br/>
+        <tr>
+          <td>
+            <label>Quantity</label></td><td>:</td><td><input type="text" formControlName='noofbooks'>
+            </td>
+          </tr><br/>
+      <tr>
+        <td>
+        <label>Pur Date</label></td><td>:</td><td><input type="date" formControlName='purdate'>
+        </td>
+      </tr><br/>
+      <tr>
+        <td>
+        <label>Price</label></td><td>:</td><td><input type="text" formControlName="rate" required
+          [ngClass]= "{'has-error':formData.get('rate').errors && (formData.get('rate').dirty || formData.get('rate').touched)}"></td>
+      </tr><br/>
+      <tr>
+        <td>
+        <label>Author</label></td><td>:</td><td><input type="text" formControlName='author'>
+        </td>
+      </tr><br/>
+        </table>
+        <button type="submit" class="btn btn-primary" (click)="InsertBook()">Inser Book</button>
+        </form>
+        </div>
+        <!--{{formData.value | json}}-->
+      
+    

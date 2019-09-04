@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+     <div class="panel panel-primary" style="margin-left: 0px !important">
+      <div class="menustyles">
+            <div class="panel-heading">  
+            <p class="navbar-brand" (click)="openNav('student')"><font class="anccls">Student</font></p>
+          <a class="navbar-brand"  (click)="openNav('faculty')"><font class="anccls">Faculty</font></a>
+          <a class="navbar-brand" (click)="openNav('mytask')"><font class="anccls">My Task</font></a>
+          <p class="navbar-brand"  (click)="openNav('myperformance')"><font class="anccls">My Performances</font></p>
+          <p class="navbar-brand"  (click)="openNav('library')"><font class="anccls">My Library</font></p>
+          <p class="navbar-brand"  (click)="openNav('master')"><font class="anccls">Masters</font></p>
+        </div>
+      </div>
+      </div>
+      <div style="margin-left: 50px;">
+          <!--<font (click)="loginApp()" *ngIf="login==true" class="logout1"></font>-->
+          <div id="mySidenav" class="sidenav" (click)="closeNav()">
+              <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+              <ul *ngIf="opener=='student'">
+                <li><a routerLink="stdreg" routerLinkActive="active">Student Registration</a></li>
+                <li><a routerLink='stdattd' routerLinkActive="active">My Attandence</a></li>
+                <li><a routerLink='stdmaterial' routerLinkActive="active">My Material</a></li>
+                <li><a routerLink='student2' routerLinkActive="active">Student Details</a></li>
+              </ul>
+              <ul *ngIf="opener=='myperformance'">
+                <li><a routerLink='stdper' routerLinkActive="active">My Performances</a></li>
+                </ul>
+              <ul *ngIf="opener=='mytask'">
+                <li><a routerLink='stdtask' routerLinkActive="active">My Task</a></li>
+                <li><a routerLink='reusablecomp' routerLinkActive="active">My Test Component</a></li>
+                </ul>
+              <ul *ngIf="opener=='faculty'">
+                <li><a routerLink='faculty' routerLinkActive="active">Faculty</a></li>
+                </ul> 
+              <ul *ngIf="opener=='library'">
+                <li><a routerLink='createbook' routerLinkActive="active">Create Book</a></li>
+                </ul>
+                <ul *ngIf="opener=='library'">
+                  <li><a routerLink='takebook' routerLinkActive="active">Take Book</a></li>
+                  </ul>
+              <ul *ngIf="opener=='master'">
+                <li><a routerLink='lookups' routerLinkActive="active">Create Book</a></li>
+                </ul>
+              
+                <!--(click)="temp=false"-->
+            </div> 
+<div>
+  <router-outlet></router-outlet>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<div>
+<h4 (click)="temp='createattandance'">Create New Attandance</h4>
+<h4 (click)="temp='insertatt'">Insert Attandance</h4>
+<div *ngIf="temp=='createattandance'">
+  <!---->
+
+ <table ><tr>
+   <td> Select Month :</td><td><select [(ngModel)]="yymm">
+    <option value="">select.....</option>
+    <option *ngFor="let arr1 of arr" value='{{arr1.uname}}'>{{arr1.uname}}</option>
+  </select></td>
+  <td>Select Class :</td><td><select [(ngModel)]="class1">
+    <option value="">select.....</option>
+    <option  value='I'>I</option>
+    <option  value='II'>II</option>
+    <option  value='III'>III</option>
+    <option  value='IV'>IV</option>
+    <option  value='V'>V</option>
+    <option  value='VI'>VI</option>
+    <option  value='VII'>VII</option>
+    <option  value='VIII'>VIII</option>
+    <option  value='IX'>IX</option>
+    <option  value='X'>X</option>
+  </select></td><td>&nbsp;&nbsp;&nbsp;</td><td><button (click)="createattandance()">createattandance</button></td>
+  </tr></table>
+
+  </div>
+<div *ngIf="temp=='insertatt'">
+    <td>Select Class :</td><td><select [(ngModel)]="class2" (change)='insertAttandance()'>
+        <option value="">select.....</option>
+        <option  value='I'>I</option>
+        <option  value='II'>II</option>
+        <option  value='III'>III</option>
+        <option  value='IV'>IV</option>
+        <option  value='V'>V</option>
+        <option  value='VI'>VI</option>
+        <option  value='VII'>VII</option>
+        <option  value='VIII'>VIII</option>
+        <option  value='IX'>IX</option>
+        <option  value='X'>X</option>
+      </select></td><td> Select Month :</td><td><select [(ngModel)]="yymm" (change)='insertAttandance()'>
+        <option value="">select.....</option>
+        <option *ngFor="let arr1 of arr" value='{{arr1.uname}}'>{{arr1.uname}}</option>
+      </select></td>
+      <form #frm="ngForm" (ngSubmit)="getFormData(frm)">
+<table border='1' *ngIf="class2!==''"><tr><th colspan="2">Class: {{class2}}</th></tr>
+  <tr><th>Student Name</th><th>Day{{days}}</th></tr>
+  <tr *ngFor='let stddata1 of stddata; let i = index;'><td>{{stddata1.stdname}}</td><td><input type='checkbox' name="{{stddata1._id}}" [(ngModel)]="qtd[i]"></td>
+  </tr>{{cnt}}
+  <tr><td colspan="2" *ngIf="stddata!=''"><button>Submit</button></td></tr>
+</table>
+</form>
+<!--{{frm.value | json}}-->
+  </div>
+</div>  
