@@ -28,13 +28,13 @@ export class LoginComponent implements OnInit {
         this.rt.navigate(["./menu"])
          document.getElementById("div1").style.display='none'
          localStorage.setItem("checklogin", "Logged");
-         //localStorage.removeItem("login")
-        //this.login=true;
+         localStorage.removeItem("login")
+        this.login=true;
         console.log(this.checklogin)
       }
       else{
         alert("Invalid Credintioals");
-        alert(this.login);
+        //alert(this.login);
       }
     }),function(){
     }

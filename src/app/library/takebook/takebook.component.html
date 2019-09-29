@@ -2,14 +2,34 @@
     <form [formGroup]="formData">
   <table class="table table-borderless">
     <tr>
-      <td><label> Rool No </label><td><input type='text' formControlName='rollno' (input)="changevalue($event.target.value)"><br/><div class="picker"></div></td>
+      <td><label> Rool No </label><td><input type='text' formControlName='stdregno'><br/><div class="picker"></div></td>
       </tr>
+            <div class="menu" *ngIf="showdata">
+              <table class="hilightrow">
+                <tr>
+                  <th>
+                    student rollno
+                  </th>
+                  <th>
+                    student name
+                  </th>
+                  <th>
+                    student class
+                  </th>
+                  </tr>
+                  <tr *ngFor="let data of searchdata" (click)="selecteddata(data)">
+                     <td>{{data.stdregno}}</td>
+                      <td>{{data.stdname}}</td>
+                      <td>{{data.stdclass}}</td>
+                    </tr>
+            </table>
+          </div>
     <tr>
-      <td><label> Name </label><td><input type='text' formControlName='name'></td>
+      <td><label> Name </label><td><input type='text' formControlName='stdname'></td>
       </tr>
     <tr>
         <td>
-            <label>Class</label><td><select formControlName='class' formControlName='class'>
+            <label>Class</label><td><select formControlName='class' formControlName='stdclass'>
                 <option value="">select.....</option>
                 <option  value='I'>I</option>
                 <option  value='II'>II</option>

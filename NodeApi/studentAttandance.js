@@ -81,7 +81,7 @@ router.get('/getsessionlogin', function(req, res){
  //getstudents...
  //for multiple params use like below
  //'/getstd/:id/:data'
- router.get('/getstd/:id/:data',function(req,res){
+ router.get('/getstd/:id',function(req,res){
    //var ids = req.params.id;
    //var data = req.params.data;
    conn.student.find({"stdregno":new RegExp(req.params.id)}).toArray(function(err,result){

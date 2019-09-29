@@ -11,6 +11,7 @@ router.post("/met2",function(req,res){
   //console.log(reqbody['stdname'])
   conn.student.find({ stdname: reqbody['stdname'],stdpwd:reqbody['stdpwd'] }).toArray(function(err, result)
   { 
+    console.log(reqbody,"==")
       res.send(result)
  })
 })

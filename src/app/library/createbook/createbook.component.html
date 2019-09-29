@@ -1,7 +1,7 @@
 <div class="tableclass" id="datatable">
     <table class="table table-bordered">
       <tr>
-        <th colspan="5" ><img src="assets/create.png" style="width:20px;height:20px;float:right" (click)="openform=true;appendCss();"></th>
+        <th colspan="5" ><img src="assets/create.png" style="width:20px;height:20px;float:right" (click)="appendCss();"></th>
       </tr>
     <tr>
       <th>
@@ -90,6 +90,11 @@
       <tr>
         <td>
         <label>Author</label></td><td>:</td><td><input type="text" formControlName='author'>
+        </td>
+      </tr><br/>
+      <tr>
+        <td>
+        <label>Status</label></td><td>:</td><td><input type="text" formControlName='Status'>
         </td>
       </tr><br/>
         </table>

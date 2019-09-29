@@ -27,7 +27,8 @@ formData:FormGroup
       purdate:["",Validators.required],
       rate:["",Validators.required,numericValidate],
       author:["",""],
-      noofbooks:["",""]
+      noofbooks:["",""],
+      Status:["",""]
     })
    }
   ngOnInit() { 
@@ -39,8 +40,10 @@ formData:FormGroup
     this.formData.value.bookid=this.getLastbookId()
     this._servdata.InsertRecord(this.formData.value,"./file3ref/insertbooks").subscribe(dt=>{
       this.showmsg=true;
+      setTimeout(() =>this.showmsg=false, 2000);
     })
     this.openform=false;
+    this.formData.reset();
     this.getBooks()
   }
   //Get Books
@@ -53,7 +56,8 @@ formData:FormGroup
   @HostListener('window:resize', ['$event'])
   appendCss(event){
     this._CsstylesserviceService.appendCssclass("datatable","formdiv",'','')
-    this.getLastbookId() 
+    this.getLastbookId();
+    this.openform =!this.openform
   }
   onFormSubmit(){
 //console.log(this.formData.value)
@@ -64,6 +68,9 @@ getLastbookId(){
     let val= dt
     this.lastbookid1=val[0].max
     })
-    return this.lastbookid1+1;
+    return parseInt(this.lastbookid1)+1;
+}
+test(a){
+console.log(a,"==========")
 }
 }
