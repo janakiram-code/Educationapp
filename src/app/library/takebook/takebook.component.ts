@@ -31,7 +31,7 @@ export class TakebookComponent implements OnInit {
       stdname:data.stdname,
       stdclass:data.stdclass
     })
-    this.showdata=false
+    this.showdata=false 
     this.sendapicall=false;
   }
   changevalue(){
